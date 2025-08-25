@@ -1,55 +1,39 @@
+# 🌫️ Air Quality Index (AQI) Analysis – Delhi  
 
-# Delhi AQI Explorer (Streamlit)
+## 📌 Project Overview  
+This project is part of **ShadowFox Internship – Level 2**, where I conducted an in-depth analysis of the **Air Quality Index (AQI) in Delhi**.  
+The aim was to address the city’s environmental challenges by analyzing **key pollutants, seasonal variations, and geographical factors**, and to provide **data-driven insights** for air quality improvement and public health strategies.  
 
-An interactive dashboard to analyze Delhi's Air Quality Index (AQI): pollutants, seasonal patterns, and environmental drivers — plus optional NLP on text feedback.
+---
 
-## Features
-- Sidebar filters for **months** and **pollutants** (gases).
-- Visualizations: **line chart**, **bar chart**, **histogram**, **box plot**, **scatter**, **correlation heatmap**, **pie chart**.
-- Optional **NLP** (keywords + sentiment) if a text column (e.g., `remarks`/`comments`) exists.
-- Uses **Matplotlib & Seaborn** for all charts.
-- Auto-detects date/pollutant columns where possible.
+## 🎯 Objectives  
+- Analyze **key pollutants**: PM2.5, PM10, NO₂, SO₂, O₃, CO  
+- Identify **seasonal variations** in air quality trends  
+- Assess the **impact of geographical factors** (traffic, industrial zones, wind patterns)  
+- Apply **statistical analyses** to quantify relationships  
+- Build **visualizations** for better interpretation of AQI dynamics  
 
-## Expected Columns
-- A date column like `Date` / `Datetime` / `Timestamp` (day-first is supported).
-- Pollutant columns such as `PM2.5`, `PM10`, `NO2`, `SO2`, `CO`, `O3`, `NH3`, `AQI`.
-- Optional: `Station`/`Location` and environmental drivers like `Temperature`, `Humidity`, `WindSpeed`.
-- Optional: text columns like `remarks`, `comments`, `feedback` for NLP.
+---
 
-> If your columns have slightly different names, the app attempts to infer them. You can also rename columns in your CSV.
+## 🛠️ Tech Stack  
+- **Programming Language**: Python  
+- **Libraries Used**: Pandas, NumPy, Matplotlib, Seaborn, Plotly, Statsmodels  
+- **Tools**: Jupyter Notebook  
 
-## How to Run in VS Code (Step-by-step)
-1. **Create a project folder** (e.g., `delhi-aqi-dashboard`) and place your CSV inside it (e.g., `delhiaqi.csv`).
-2. **Open the folder in VS Code**.
-3. **Create a virtual environment** (recommended):
-   ```bash
-   python -m venv .venv
-   # Activate
-   # Windows:
-   .venv\Scripts\activate
-   # macOS/Linux:
-   source .venv/bin/activate
-   ```
-4. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-5. **Run Streamlit**:
-   ```bash
-   streamlit run streamlit_app.py
-   ```
-6. Your browser will open at a local URL. Use the **left sidebar** to upload your CSV (or keep it as `delhiaqi.csv` in the same folder). Choose **pollutants** and **months**, then explore the charts.
+---
 
-## Customization
-- Open `streamlit_app.py` and modify:
-  - The season mapping in `parse_dates()`.
-  - WHO thresholds in `who_thresholds()` used for the exceedance **pie chart**.
-  - Add/rename environmental driver columns in `driver_cols` list.
+## 📊 Analysis & Visualizations  
+- ✅ **Trend Analysis** – daily, monthly, and seasonal AQI patterns  
+- ✅ **Pollutant Contribution** – pollutant-wise heatmaps & correlations  
+- ✅ **Seasonal Boxplots** – identifying pollution peaks across winter, summer, monsoon  
+- ✅ **Station-wise Comparisons** – geographical AQI variations  
+- ✅ **Statistical Tests** – ANOVA/Kruskal-Wallis for seasonal differences, regression for pollutant influence  
+- ✅ **Visual Insights** – line charts, scatter plots, bar graphs, wind-rose diagrams  
 
-## Troubleshooting
-- **No date column detected**: Ensure a column named `Date`/`Datetime`/`Timestamp`, or modify `parse_dates()` in the code.
-- **NLP errors**: The app auto-downloads NLTK resources when first used. If you're offline, pre-download `stopwords` and `vader_lexicon`.
-- **Blank chart**: Check for missing/NaN values. The app coerces non-numeric entries to numbers where possible.
+---
 
-## License
-MIT
+## 🔑 Key Insights  
+- **PM2.5 and PM10** are the dominant drivers of poor AQI in Delhi  
+- Strong **seasonal variation** – pollution spikes in winter, dips during monsoon  
+- **Geographical hotspots** near traffic corridors and industrial areas show persistently high AQI  
+- Data-driven interventions can help design **targeted policies** for pollution control and **public health awareness**  
